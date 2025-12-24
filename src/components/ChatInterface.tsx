@@ -39,7 +39,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ documentsCount }) => {
     if (!input.trim() || loading) return;
 
     const userMessage = input.trim();
-    setInput('');
+    setInput('privategxt_');
     setLoading(true);
 
     try {
@@ -65,7 +65,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ documentsCount }) => {
         id: Date.now().toString(),
         timestamp: new Date().toISOString(),
         message: userMessage,
-        response: `Error: ${error.response?.data?.detail || t('chat_error')}`,
+        response: `Error: ${error.response?.data?.detail || t('privategxt_chat_error')}`,
         provider: 'error',
         model: '',
         sources: [],
@@ -90,7 +90,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ documentsCount }) => {
       {/* Header */}
       <div className="p-4 border-b border-slate-200 flex justify-between items-center">
         <h2 className="text-xl font-semibold text-slate-800">
-          {t('chat_title')}
+          {t('privategxt_chat_title')}
         </h2>
 
         {/* LLM Provider Selector */}
@@ -112,9 +112,9 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ documentsCount }) => {
             <svg className="w-20 h-20 mx-auto mb-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
             </svg>
-            <p className="text-lg mb-2">{t('chat_empty')}</p>
+            <p className="text-lg mb-2">{t('privategxt_chat_empty')}</p>
             <p className="text-sm text-slate-400">
-              {documentsCount > 0 ? t('chat_ask_question') : t('chat_upload_first')}
+              {documentsCount > 0 ? t('privategxt_chat_ask_question') : t('privategxt_chat_upload_first')}
             </p>
           </div>
         ) : (
@@ -150,7 +150,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ documentsCount }) => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder={t('chat_input_placeholder')}
+            placeholder={t('privategxt_chat_input_placeholder')}
             disabled={loading}
             className="flex-1 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
           />

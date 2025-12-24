@@ -47,13 +47,13 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({ onUploadSuccess }) => {
     const fileExtension = '.' + file.name.split('.').pop()?.toLowerCase();
 
     if (!allowedTypes.includes(file.type) && !allowedExtensions.includes(fileExtension)) {
-      setError(t('upload_error_type'));
+      setError(t('privategxt_upload_error_type'));
       return;
     }
 
     // Validate file size (10MB max)
     if (file.size > 10 * 1024 * 1024) {
-      setError(t('upload_error_size'));
+      setError(t('privategxt_upload_error_size'));
       return;
     }
 
@@ -70,7 +70,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({ onUploadSuccess }) => {
       }
     } catch (err: any) {
       console.error('Upload error:', err);
-      const errorMessage = err.response?.data?.detail || t('upload_error_generic');
+      const errorMessage = err.response?.data?.detail || t('privategxt_upload_error_generic');
       setError(errorMessage);
     } finally {
       setUploading(false);
@@ -80,7 +80,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({ onUploadSuccess }) => {
   return (
     <div className="bg-white rounded-xl shadow-md p-6">
       <h2 className="text-xl font-semibold text-slate-800 mb-4">
-        {t('upload_title')}
+        {t('privategxt_upload_title')}
       </h2>
 
       <div
@@ -106,7 +106,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({ onUploadSuccess }) => {
         {uploading ? (
           <div className="flex flex-col items-center">
             <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mb-4"></div>
-            <p className="text-slate-600">{t('uploading')}</p>
+            <p className="text-slate-600">{t('privategxt_uploading')}</p>
           </div>
         ) : (
           <div className="flex flex-col items-center">
@@ -114,10 +114,10 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({ onUploadSuccess }) => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
             </svg>
             <p className="text-lg text-slate-700 font-medium mb-2">
-              {t('upload_drag_drop')}
+              {t('privategxt_upload_drag_drop')}
             </p>
             <p className="text-sm text-slate-500">
-              {t('upload_supported_formats')}
+              {t('privategxt_upload_supported_formats')}
             </p>
           </div>
         )}

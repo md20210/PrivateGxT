@@ -34,26 +34,26 @@ function App() {
   };
 
   const handleDelete = async (docId: string) => {
-    if (!confirm(t('confirm_delete'))) return;
+    if (!confirm(t('privategxt_confirm_delete'))) return;
 
     try {
       await privategxtApi.deleteDocument(docId);
       loadData();
     } catch (error) {
       console.error('Failed to delete document:', error);
-      alert(t('delete_error'));
+      alert(t('privategxt_delete_error'));
     }
   };
 
   const handleClearAll = async () => {
-    if (!confirm(t('confirm_clear_all'))) return;
+    if (!confirm(t('privategxt_confirm_clear_all'))) return;
 
     try {
       await privategxtApi.clearAll();
       loadData();
     } catch (error) {
       console.error('Failed to clear all:', error);
-      alert(t('clear_error'));
+      alert(t('privategxt_clear_error'));
     }
   };
 
@@ -77,10 +77,10 @@ function App() {
           <div className="flex justify-between items-start mb-6">
             <div>
               <h1 className="text-4xl font-bold text-slate-800 mb-2">
-                {t('app_title')}
+                {t('privategxt_app_title')}
               </h1>
               <p className="text-lg text-slate-600">
-                {t('app_subtitle')}
+                {t('privategxt_app_subtitle')}
               </p>
             </div>
             <LanguageToggle />
@@ -98,7 +98,7 @@ function App() {
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-slate-800">{stats.documents}</p>
-                    <p className="text-sm text-slate-600">{t('stats_documents')}</p>
+                    <p className="text-sm text-slate-600">{t('privategxt_stats_documents')}</p>
                   </div>
                 </div>
               </div>
@@ -112,7 +112,7 @@ function App() {
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-slate-800">{stats.chunks}</p>
-                    <p className="text-sm text-slate-600">{t('stats_chunks')}</p>
+                    <p className="text-sm text-slate-600">{t('privategxt_stats_chunks')}</p>
                   </div>
                 </div>
               </div>
@@ -126,7 +126,7 @@ function App() {
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-slate-800">{stats.messages}</p>
-                    <p className="text-sm text-slate-600">{t('stats_messages')}</p>
+                    <p className="text-sm text-slate-600">{t('privategxt_stats_messages')}</p>
                   </div>
                 </div>
               </div>
@@ -155,7 +155,7 @@ function App() {
         {/* Footer */}
         <footer className="mt-12 text-center text-sm text-slate-500">
           <p>
-            {t('footer_powered_by')}
+            {t('privategxt_footer_powered_by')}
             <a href="https://www.dabrock.info" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 font-medium mx-1">
               General Backend
             </a>

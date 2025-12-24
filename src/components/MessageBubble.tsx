@@ -65,7 +65,7 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
                     <svg className={`w-4 h-4 transition-transform ${showSources ? 'rotate-90' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                    {t('sources')} ({message.sources.length})
+                    {t('privategxt_sources')} ({message.sources.length})
                   </button>
 
                   {showSources && (
@@ -78,7 +78,7 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
                           <div className="flex-1">
                             <p className="font-medium text-slate-700">{source.filename}</p>
                             <p className="text-xs text-slate-500">
-                              {t('chunk')} {source.chunk_index + 1}
+                              {t('privategxt_chunk')} {source.chunk_index + 1}
                             </p>
                           </div>
                         </div>
